@@ -41,13 +41,13 @@ body {
   display: flex;
   gap: 2rem;
   flex-direction: column;
-  place-items: center;
-  place-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Style the card component */
 .card {
-  max-width: 22rem;
+  max-width: 23.438rem;
   min-height: 45rem;
   background-color: var(--color-white);
   border-radius: 12px;
@@ -57,6 +57,12 @@ body {
 
 /* Style the image within the card */
 .image {
+  width: 100%;
+  height: 50%;
+  display: block;
+}
+
+.image img {
   height: auto;
   width: 100%;
   border-top-left-radius: 12px;
@@ -151,4 +157,29 @@ body {
 .card button:hover {
   background-color: var(--color-green-400);
   cursor: pointer;
+}
+
+@media(min-width: 600px) {
+  .card {
+    flex-direction: row;
+    min-width: 35rem;
+    min-height: auto;
+  }
+
+  .image {
+    width: 50%;
+    height: 100%;
+  }
+
+  .image img {
+    border-radius: 12px 0 0 12px;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .details {
+    justify-content: space-between;
+    min-height: auto;
+    width: 50%;
+  }
 }
